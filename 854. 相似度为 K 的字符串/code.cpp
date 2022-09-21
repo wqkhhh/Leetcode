@@ -16,7 +16,9 @@ public:
                 while(pos < n && cur[pos] == s2[pos]){
                     pos  ++;
                 }
-                for (int j = pos+1; j < n; j ++) {
+                //未必存在一个可交换的位置
+                //把所有可能的交换放入queue
+                for (int j = pos+1; j < n; j ++) { 
                     if(cur[j] != s2[j] && cur[j] == s2[pos]){
                         swap(cur[j], cur[pos]);
                         if(!st.count(cur)){
